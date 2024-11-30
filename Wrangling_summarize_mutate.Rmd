@@ -82,13 +82,19 @@ This is useful if want to compute summary statistics by group. For example, we m
 
 We already know how to compute the average length of movies overall. What we need to add to our pipeline is a `group_by`
 
-```{r eval=FALSE}
-movies %>%
+```{r eval=TRUE}
+movies_ln84<-movies %>%
   group_by(Action) %>%
+  summarize(mean(length),sd(length),min(year))
   # move your summarize code from the last exercise here!
+movies_ln84
 ```
 
 Which movies are longer, action movies or non-action movies? 
+
+On average Action movies are seen to be longer with run times of about 100 minutes compared to non-action movies having run times of about 81 minutes. The standard deviation also shows the dufferenece between the two as it is lower with the Action movies eaning more the movies computed are  closer to 100 minutes while non-action movies vary more on run time.
+
+
 
 ### Your turn
 
